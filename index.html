@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrewBot - Your AI Drink Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Pacifico&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="loading-screen">
+        <div class="loading-content">
+            <img src="images/brewbot-logo.svg" alt="BrewBot Logo" class="loading-logo">
+            <div class="loading-bar-container">
+                <div class="loading-bar"></div>
+            </div>
+            <p class="loading-text">Brewing something special...</p>
+        </div>
+    </div>
+    <div id="particles-js"></div>
+    <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+    </div>
+    <audio id="windSound" preload="auto">
+        <source src="sounds/wind-whoosh.mp3" type="audio/mpeg">
+    </audio>
+    <header>
+        <img src="images/brewbot-logo.svg" alt="BrewBot Logo" class="logo">
+        <h1>BrewBot</h1>
+        <p class="tagline">Your AI-Powered Beverage Companion</p>
+        <nav>
+            <ul>
+                <li><a href="#home" onclick="playWindSound()">Home</a></li>
+                <li><a href="#features" onclick="playWindSound()">Features</a></li>
+                <li><a href="#recipes" onclick="playWindSound()">Sample Recipes</a></li>
+                <li><a href="#try-it" onclick="playWindSound()">Try BrewBot</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <h2>Meet BrewBot</h2>
+            <p>BrewBot is an intelligent AI that crafts personalized drink recipes based on your preferences, mood, and needs. Whether you're looking for a warming winter tea or a refreshing summer cocktail, BrewBot has got you covered!</p>
+        </section>
+
+        <section id="features">
+            <h2>What BrewBot Can Do</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🌡 Dietary Conscious</h3>
+                    <p>Accommodates dietary restrictions and allergies</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🎯 Personalized</h3>
+                    <p>Learns your taste preferences over time</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📝 Smart Recipes</h3>
+                    <p>Generates detailed, easy-to-follow instructions</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="recipes">
+            <h2>Sample Recipes</h2>
+            <div class="recipe-grid">
+                <div class="recipe-card">
+                    <div class="recipe-card-inner">
+                        <div class="recipe-card-front">
+                            <h3>Cozy Chai Latte</h3>
+                            <p class="recipe-type">Hot • Caffeinated • Spicy</p>
+                            <p>Perfect for cold mornings and relaxation</p>
+                        </div>
+                        <div class="recipe-card-back">
+                            <h3>Cozy Chai Latte</h3>
+                            <div class="recipe-details">
+                                <div class="ingredients">
+                                    <h4>Ingredients:</h4>
+                                    <ul>
+                                        <li>2 black tea bags</li>
+                                        <li>1 cinnamon stick</li>
+                                        <li>4 cardamom pods</li>
+                                        <li>4 cloves</li>
+                                        <li>1" fresh ginger</li>
+                                        <li>1 cup milk of choice</li>
+                                        <li>2 tbsp honey</li>
+                                    </ul>
+                                </div>
+                                <div class="instructions">
+                                    <h4>Instructions:</h4>
+                                    <ol>
+                                        <li>Simmer spices in 1 cup water</li>
+                                        <li>Add tea bags and steep</li>
+                                        <li>Add milk and honey</li>
+                                        <li>Strain and serve hot</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="recipe-card">
+                    <div class="recipe-card-inner">
+                        <div class="recipe-card-front">
+                            <h3>Berry Mint Refresher</h3>
+                            <p class="recipe-type">Cold • Non-Alcoholic • Fruity</p>
+                            <p>Ideal for summer afternoons</p>
+                        </div>
+                        <div class="recipe-card-back">
+                            <h3>Berry Mint Refresher</h3>
+                            <div class="recipe-details">
+                                <div class="ingredients">
+                                    <h4>Ingredients:</h4>
+                                    <ul>
+                                        <li>1 cup mixed berries</li>
+                                        <li>8-10 mint leaves</li>
+                                        <li>1 lime, juiced</li>
+                                        <li>2 tbsp honey</li>
+                                        <li>Sparkling water</li>
+                                        <li>Ice cubes</li>
+                                    </ul>
+                                </div>
+                                <div class="instructions">
+                                    <h4>Instructions:</h4>
+                                    <ol>
+                                        <li>Muddle berries and mint</li>
+                                        <li>Add lime juice and honey</li>
+                                        <li>Fill glass with ice</li>
+                                        <li>Top with sparkling water</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="try-it" class="cta-section">
+            <h2>Ready to Try BrewBot?</h2>
+            <p>Tell BrewBot what you're in the mood for, and get a personalized drink recipe instantly!</p>
+            <button class="cta-button">Start Brewing</button>
+        </section>
+
+        <div id="chat-interface" class="chat-container hidden">
+            <div class="chat-header">
+                <img src="images/brewbot-logo.svg" alt="BrewBot Logo" class="chat-logo">
+                <h3>Chat with BrewBot</h3>
+                <button class="minimize-chat">−</button>
+            </div>
+            <div class="chat-messages">
+                <div class="message bot">
+                    <img src="images/brewbot-logo.svg" alt="BrewBot" class="bot-avatar">
+                    <div class="message-content">
+                        Hello! I'm BrewBot 🤖 Tell me what kind of drink you're in the mood for, and I'll create a perfect recipe for you! Consider factors like:
+                        • Hot or cold
+                        • Caffeine preference
+                        • Flavor profile
+                        • Dietary restrictions
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <textarea placeholder="Describe your perfect drink..." rows="1"></textarea>
+                <button class="send-message">
+                    <svg width="20" height="20" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-left">
+            <img src="images/brewbot-logo.svg" alt="BrewBot Logo" class="footer-logo">
+            <p>&copy; 2024 BrewBot AI. Crafting perfect drinks, one recipe at a time.</p>
+        </div>
+        <a href="https://x.com/brewbotai" target="_blank" class="twitter-button">
+            <svg viewBox="0 0 24 24" class="twitter-icon">
+                <path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+            Follow us
+        </a>
+    </footer>
+    <script src="scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="config.js"></script>
+    <script>
+    particlesJS('particles-js',
+      {
+        "particles": {
+          "number": {
+            "value": 80,
+            "density": {
+              "enable": true,
+              "value_area": 800
+            }
+          },
+          "color": {
+            "value": "#ffffff"
+          },
+          "opacity": {
+            "value": 0.5,
+            "random": false
+          },
+          "size": {
+            "value": 3,
+            "random": true
+          },
+          "line_linked": {
+            "enable": true,
+            "distance": 150,
+            "color": "#ffffff",
+            "opacity": 0.4,
+            "width": 1
+          },
+          "move": {
+            "enable": true,
+            "speed": 2,
+            "direction": "none",
+            "random": false,
+            "straight": false,
+            "out_mode": "out",
+            "bounce": false
+          }
+        },
+        "interactivity": {
+          "detect_on": "canvas",
+          "events": {
+            "onhover": {
+              "enable": true,
+              "mode": "repulse"
+            },
+            "resize": true
+          }
+        },
+        "retina_detect": true
+      }
+    );
+    </script>
+</body>
+</html> 
